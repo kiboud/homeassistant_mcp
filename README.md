@@ -26,7 +26,7 @@ docker build -t homeassistant-mcp .
 docker-compose build
 ```
 
-Since this MCP server uses Server-Sent Events (SSE) for communication over HTTP, it can run continuously in the background and you can point your AI or MCP client to its network URL.
+Since this MCP server uses StreamableHTTP for communication over HTTP, it can run continuously in the background and you can point your AI or MCP client to its network URL.
 
 ### Running the Server
 
@@ -38,10 +38,10 @@ This will expose the MCP Server on port `8000`.
 
 ### Connecting your AI / MCP Client
 
-Point your AI tool or MCP Client to the SSE endpoint. For example:
-- **SSE URL:** `http://<IP_OF_HOMEMINIPC>:8000/sse`
+Point your AI tool or MCP Client to the StreamableHTTP endpoint. For example:
+- **StreamableHTTP URL:** `http://<IP_OF_HOMEMINIPC>:8000/mcp`
 
-If you are using a tool that requires `mcpServers` configuration but only supports `stdio` natively, you can bridge it, but many modern AI tools natively support SSE endpoints by just pasting the URL.
+If you are using OpenClaw or another tool that supports `streamable-http`, simply provide the URL above.
 
 ## Running Locally (without Docker)
 

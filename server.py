@@ -83,4 +83,4 @@ async def get_entity_history(entity_id: str) -> str:
         return str(response.json())
 
 if __name__ == "__main__":
-    mcp.run(transport='sse')
+    mcp.run(transport='streamable-http')
